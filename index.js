@@ -1,7 +1,10 @@
 function myEach(collection, cbFunction){
 let array = Object.values(collection)
 
-array.forEach(element => cbFunction(element))
+for(let i =0; i<array.length; i++){
+    cbFunction(array[i])
+}
+
 return collection
 }
 
@@ -17,8 +20,12 @@ return newArray
 function myReduce(collection, cbFunction, acc){
 let arrayReduce = Object.values(collection)
 
-//console.log('see me ----------> ', arrayReduce)
+if(acc === undefined){
+    acc = [arrayReduce[0]]
+    arrayReduce.shift()
+}
+console.log('see me ----------> ', arrayReduce, acc)
 let result = arrayReduce.reduce(cbFunction, acc)
-//console.log('see result -------------->', result)
+console.log('see result -------------->', result)
 return result
 }
