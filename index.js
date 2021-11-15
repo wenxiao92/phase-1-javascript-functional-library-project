@@ -33,13 +33,15 @@ if(acc === undefined){
 // //console.log('see result -------------->', result)
 // return result
 
-let accumulator = 0
+let accumulator = acc
 for(let i = 0; i < arrayReduce.length; i++){
     let currentValue = arrayReduce[i]
-    accumulator += currentValue
+    console.log(accumulator)
+    accumulator = cbFunction(accumulator, currentValue)
+    console.log(accumulator)
 }
 
-return (accumulator * 3 + acc)
+return accumulator
 
 }
 
